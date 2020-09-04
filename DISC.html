@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Berita Acara PDF</title>
+    <style>
+      body {
+        font-size: 18px;
+      }
+
+      /* Table Header */
+      .header {
+        width: 50%;
+      }
+
+      .header table tr td:first-child {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Table Header -->
+      <div class="header">
+        <table cellspacing="10">
+          <tr>
+            <td>Nama Perusahaan</td>
+            <td>PT. BTS.id</td>
+          </tr>
+          <tr>
+            <td>Target Job</td>
+            <td>Direktur</td>
+          </tr>
+          <tr>
+            <td>Tanggal Assestment</td>
+            <td>17/08/1945</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- List Asesi -->
+      <div style="margin-top: 20px">
+        <h3>Laporan</h3>
+        <table
+          border="1"
+          bordercolor="#555"
+          cellspacing="0"
+          cellpadding="10"
+          width="100%"
+        >
+          <thead>
+            <tr>
+              <th>Line</th>
+              <th>D</th>
+              <th>I</th>
+              <th>S</th>
+              <th>C</th>
+              <th>*</th>
+              <th>tot</th>
+            </tr>
+          </thead>
+
+          <!-- Value Here -->
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>9</td>
+              <td>3</td>
+              <td>3</td>
+              <td>4</td>
+              <td>44</td>
+              <td>24</td>
+            </tr>
+
+            <tr>
+              <td>3</td>
+              <td>9</td>
+              <td>3</td>
+              <td>3</td>
+              <td>4</td>
+              <td>44</td>
+              <td>24</td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td>9</td>
+              <td>3</td>
+              <td>3</td>
+              <td>4</td>
+              <td style="border: none; background-color: white"></td>
+              <td style="border: none; background-color: white"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div
+        style="
+          margin-top: 40px;
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          justify-content: start;
+          align-items: center;
+        "
+      >
+        <div>
+          <h3>Graph 1 Most</h3>
+          <p>Mask, Public Self</p>
+          <div id="chart-1"></div>
+        </div>
+        <div>
+          <h3>Graph 2 Least</h3>
+          <p>Mask, Private Self</p>
+          <div id="chart-2"></div>
+        </div>
+        <div>
+          <h3>Graph 3 Change</h3>
+          <p>Mask, Private Self</p>
+          <div id="chart-3"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/frappe-charts@1.2.4/dist/frappe-charts.min.iife.js"></script>
+    <!-- Chart Here -->
+    <script>
+      new frappe.Chart("#chart-1", {
+        data: {
+          labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+          datasets: [
+            { name: "Dataset 1", values: [18, 40, 30, 35, 8, 52, 17, -4] },
+            { name: "Dataset 2", values: [30, 50, -10, 15, 18, 32, 27, 14] }
+          ]
+        },
+        type: "line",
+        height: 250,
+        colors: ["red"],
+        legend: "none"
+      })
+
+      new frappe.Chart("#chart-2", {
+        data: {
+          labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+          datasets: [
+            { name: "Dataset 1", values: [18, 40, 30, 35, 8, 52, 17, -4] },
+            { name: "Dataset 2", values: [30, 50, -10, 15, 18, 32, 27, 14] }
+          ]
+        },
+        type: "line",
+        height: 250,
+        colors: ["red"],
+        legend: "none"
+      })
+
+      new frappe.Chart("#chart-3", {
+        data: {
+          labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+          datasets: [
+            { name: "Dataset 1", values: [18, 40, 30, 35, 8, 52, 17, -4] },
+            { name: "Dataset 2", values: [30, 50, -10, 15, 18, 32, 27, 14] }
+          ]
+        },
+        type: "line",
+        height: 250,
+        colors: ["red"],
+        legend: "none"
+      })
+    </script>
+  </body>
+</html>
