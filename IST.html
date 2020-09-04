@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leadership PDF</title>
+    <style>
+      body {
+        font-size: 12px;
+      }
+
+      /* Table Header */
+      .header {
+        width: 50%;
+      }
+
+      .container .right-side {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <table cellspacing="10" style="width: 100%">
+        <tr>
+          <td>Nomor</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Nama</td>
+          <td>Cody Fisher</td>
+        </tr>
+        <tr>
+          <td>Jenis Kelamin</td>
+          <td>Perempuan</td>
+        </tr>
+        <tr>
+          <td>Pendidikan</td>
+          <td>S1 Teknik Informatika</td>
+        </tr>
+        <tr>
+          <td>Perusahaan</td>
+          <td>PT. BTS.id</td>
+        </tr>
+        <tr>
+          <td>Tanggal Assestment</td>
+          <td>17/08/1945</td>
+        </tr>
+      </table>
+    </div>
+
+    <div style="position: relative">
+      <div style="width: 100%">
+        <!-- Grafik dengan standar pendidikan -->
+        <div>
+          <div id="grafik-dengan-standar-pendidikan"></div>
+          <strong>Grafik dengan standar pendidikan</strong>
+          <table>
+            <tr>
+              <td>rata-rata = 110</td>
+              <td>rata-rata ideal = 0</td>
+              <td>SD = 0</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Grafik dengan standar pekerjaan -->
+        <div>
+          <div id="grafik-dengan-standar-pekerjaan"></div>
+          <strong>Grafik dengan standar pendidikan</strong>
+          <table>
+            <tr>
+              <td>rata-rata = 110</td>
+              <td>rata-rata ideal = 0</td>
+              <td>SD = 0</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div>
+        <table
+          border="1"
+          bordercolor="#ccc"
+          cellspacing="0"
+          cellpadding="10"
+          style="width: 100%"
+        >
+          <thead>
+            <tr>
+              <th></th>
+              <th>RW</th>
+              <th>SW</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th>SE</th>
+              <th>12</th>
+              <th>11</th>
+            </tr>
+            <tr>
+              <th>WA</th>
+              <th>12</th>
+              <th>11</th>
+            </tr>
+
+            <tr>
+              <th>AN</th>
+              <th>12</th>
+              <th>11</th>
+            </tr>
+
+            <tr>
+              <th>GE</th>
+              <th>12</th>
+              <th>11</th>
+            </tr>
+
+            <tr>
+              <th>RA</th>
+              <th>12</th>
+              <th>11</th>
+            </tr>
+
+            <tr>
+              <th>ZR</th>
+              <th>12</th>
+              <th>11</th>
+            </tr>
+
+            <tr>
+              <th>FA</th>
+              <th>12</th>
+              <th>11</th>
+            </tr>
+
+            <tr>
+              <th>WU</th>
+              <th>12</th>
+              <th>11</th>
+            </tr>
+
+            <tr>
+              <th>ME</th>
+              <th>12</th>
+              <th>11</th>
+            </tr>
+
+            <tr>
+              <th>Jumlah</th>
+              <th>12</th>
+              <th>11</th>
+            </tr>
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <th></th>
+              <th>IQ</th>
+              <th>115</th>
+            </tr>
+          </tfoot>
+        </table>
+
+        <div style="margin-top: 20px">
+          <table>
+            <tr>
+              <td>GE + RA</td>
+              <td>></td>
+              <td>AN +ZR</td>
+            </tr>
+            <tr>
+              <td>227</td>
+              <td>></td>
+              <td>218</td>
+            </tr>
+            <tr>
+              <td>Selisih</td>
+              <td>=</td>
+              <td>9</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/frappe-charts@1.2.4/dist/frappe-charts.min.iife.js"></script>
+    <!-- Chart Here -->
+    <script>
+      new frappe.Chart("#grafik-dengan-standar-pendidikan", {
+        data: {
+          labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+          datasets: [
+            { name: "Dataset 1", values: [18, 40, 30, 35, 8, 52, 17, -4] },
+            { name: "Dataset 2", values: [30, 50, -10, 15, 18, 32, 27, 14] }
+          ]
+        },
+        type: "line",
+        height: 250,
+        colors: ["red"],
+        legend: "none",
+        width: 100
+      })
+
+      new frappe.Chart("#grafik-dengan-standar-pekerjaan", {
+        data: {
+          labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+          datasets: [
+            { name: "Dataset 1", values: [18, 40, 30, 35, 8, 52, 17, -4] },
+            { name: "Dataset 2", values: [30, 50, -10, 15, 18, 32, 27, 14] }
+          ]
+        },
+        type: "line",
+        height: 250,
+        colors: ["red"]
+      })
+    </script>
+  </body>
+</html>
