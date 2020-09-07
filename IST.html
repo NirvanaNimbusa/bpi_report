@@ -9,6 +9,10 @@
         font-size: 12px;
       }
 
+      table {
+        border-collapse: collapse;
+      }
+
       /* Table Header */
       .header {
         width: 50%;
@@ -51,33 +55,37 @@
       </table>
     </div>
 
-    <div style="position: relative">
-      <div style="width: 100%">
-        <!-- Grafik dengan standar pendidikan -->
-        <div>
-          <div id="grafik-dengan-standar-pendidikan"></div>
-          <strong>Grafik dengan standar pendidikan</strong>
-          <table>
-            <tr>
-              <td>rata-rata = 110</td>
-              <td>rata-rata ideal = 0</td>
-              <td>SD = 0</td>
-            </tr>
-          </table>
-        </div>
+    <div>
+      <!-- Grafik dengan standar pendidikan -->
+      <div style="margin-bottom: 20px">
+        <div
+          id="grafik-dengan-standar-pendidikan"
+          style="margin-bottom: 20px"
+        ></div>
+        <strong>Grafik dengan standar pendidikan</strong>
+        <table>
+          <tr>
+            <td>rata-rata = 110</td>
+            <td>rata-rata ideal = 0</td>
+            <td>SD = 0</td>
+          </tr>
+        </table>
+      </div>
 
-        <!-- Grafik dengan standar pekerjaan -->
-        <div>
-          <div id="grafik-dengan-standar-pekerjaan"></div>
-          <strong>Grafik dengan standar pendidikan</strong>
-          <table>
-            <tr>
-              <td>rata-rata = 110</td>
-              <td>rata-rata ideal = 0</td>
-              <td>SD = 0</td>
-            </tr>
-          </table>
-        </div>
+      <!-- Grafik dengan standar pekerjaan -->
+      <div>
+        <div
+          id="grafik-dengan-standar-pekerjaan"
+          style="margin-bottom: 20px"
+        ></div>
+        <strong>Grafik dengan standar pendidikan</strong>
+        <table>
+          <tr>
+            <td>rata-rata = 110</td>
+            <td>rata-rata ideal = 0</td>
+            <td>SD = 0</td>
+          </tr>
+        </table>
       </div>
 
       <div>
@@ -86,11 +94,16 @@
           bordercolor="#ccc"
           cellspacing="0"
           cellpadding="10"
-          style="width: 100%"
+          style="width: 100%; margin-top: 20px"
         >
           <thead>
             <tr>
-              <th></th>
+              <th
+                style="
+                  border-left: 1px solid #fff !important;
+                  border-top: 1px solid #fff !important;
+                "
+              ></th>
               <th>RW</th>
               <th>SW</th>
             </tr>
@@ -159,14 +172,12 @@
 
           <tfoot>
             <tr>
-              <th
+              <td
                 style="
-                  border: 1px #fff solid;
-                  padding: 0px !important;
-                  margin: 0px !important;
-                  background-color: white;
+                  border-left: 1px solid #fff !important;
+                  border-bottom: 1px solid #fff !important;
                 "
-              ></th>
+              ></td>
               <th>IQ</th>
               <th>115</th>
             </tr>
@@ -195,36 +206,86 @@
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/frappe-charts@1.2.4/dist/frappe-charts.min.iife.js"></script>
+    <!-- Google Chart -->
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
     <!-- Chart Here -->
     <script>
-      new frappe.Chart("#grafik-dengan-standar-pendidikan", {
-        data: {
-          labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-          datasets: [
-            { name: "Dataset 1", values: [18, 40, 30, 35, 8, 52, 17, -4] },
-            { name: "Dataset 2", values: [30, 50, -10, 15, 18, 32, 27, 14] }
-          ]
-        },
-        type: "line",
-        height: 250,
-        colors: ["red"],
-        legend: "none",
-        width: 100
-      })
+      // Area Charts
+      google.charts.load("current", { packages: ["line"] })
+      google.charts.setOnLoadCallback(
+        drawGrafikDenganStandarPendidikanLineChart
+      )
+      google.charts.setOnLoadCallback(drawGrafikDenganStandarPekerjaanLineChart)
 
-      new frappe.Chart("#grafik-dengan-standar-pekerjaan", {
-        data: {
-          labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-          datasets: [
-            { name: "Dataset 1", values: [18, 40, 30, 35, 8, 52, 17, -4] },
-            { name: "Dataset 2", values: [30, 50, -10, 15, 18, 32, 27, 14] }
-          ]
-        },
-        type: "line",
-        height: 250,
-        colors: ["red"]
-      })
+      // Load Area chart
+      function drawGrafikDenganStandarPendidikanLineChart() {
+        var data = new google.visualization.DataTable()
+        data.addColumn("string", "")
+        data.addColumn("number", "SomethingOne")
+        data.addColumn("number", "SomethingTwo")
+
+        data.addRows([
+          ["SE", 110, 105],
+          ["WA", 105, 105],
+          ["AN", 120, 110],
+          ["GE", 130, 115],
+          ["RA", 100, 120],
+          ["ZR", 120, 105],
+          ["FA", 100, 110]
+        ])
+
+        var options = {
+          width: 900,
+          height: 200,
+          axes: {
+            x: {
+              0: { side: "top" }
+            }
+          },
+          colors: ["#FFA311", "#6F6DFC"]
+        }
+
+        var chart = new google.charts.Line(
+          document.getElementById("grafik-dengan-standar-pendidikan")
+        )
+        chart.draw(data, google.charts.Line.convertOptions(options))
+      }
+
+      function drawGrafikDenganStandarPekerjaanLineChart() {
+        var data = new google.visualization.DataTable()
+        data.addColumn("string", "")
+        data.addColumn("number", "SomethingOne")
+        data.addColumn("number", "SomethingTwo")
+
+        data.addRows([
+          ["SE", 110, 105],
+          ["WA", 105, 105],
+          ["AN", 120, 110],
+          ["GE", 130, 115],
+          ["RA", 100, 120],
+          ["ZR", 120, 105],
+          ["FA", 100, 110]
+        ])
+
+        var options = {
+          width: 900,
+          height: 200,
+          axes: {
+            x: {
+              0: { side: "top" }
+            }
+          },
+          colors: ["#FFA311", "#6F6DFC"]
+        }
+
+        var chart = new google.charts.Line(
+          document.getElementById("grafik-dengan-standar-pekerjaan")
+        )
+        chart.draw(data, google.charts.Line.convertOptions(options))
+      }
     </script>
   </body>
 </html>
