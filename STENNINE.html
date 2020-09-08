@@ -19,6 +19,7 @@
       .mydiv {
         border: 1px solid #fea516;
         background-color: #fea516;
+        margin: auto;
         position: absolute;
       }
       .dot {
@@ -42,6 +43,7 @@
           width: 2px !important;
           margin-top: 5px !important;
           margin-left: 5px !important;
+          margin-right: 50% !important;
           background-color: #fea516 !important;
         }
 
@@ -57,7 +59,7 @@
         border="1"
         bordercolor="#ccc"
         cellspacing="0"
-        cellpadding="10"
+        cellpadding="5"
         style="width: 100%"
       >
         <thead>
@@ -354,7 +356,6 @@
         </tbody>
       </table>
     </div>
-
     <div id="line-a-b" class="line"></div>
     <div id="line-b-c" class="line"></div>
     <div id="line-c-e" class="line"></div>
@@ -655,15 +656,18 @@
         line.style["-ms-transform"] = "rotate(" + ANG + "deg)"
         line.style["-o-transform"] = "rotate(" + ANG + "deg)"
         line.style["-transform"] = "rotate(" + ANG + "deg)"
+        console.log(top)
         line.style.top = top + "px"
         line.style.left = left + "px"
         line.style.height = H + "px"
       }
 
       var beforePrint = function () {
+        onResizeFunc()
         console.log("Functionality to run before printing.")
       }
       var afterPrint = function () {
+        onResizeFunc()
         console.log("Functionality to run after printing")
       }
 
