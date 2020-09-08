@@ -6,7 +6,11 @@
     <title>Berita Acara PDF</title>
     <style>
       body {
-        font-size: 18px;
+        font-size: 12px;
+      }
+
+      table {
+        border-collapse: collapse;
       }
 
       /* Table Header */
@@ -17,20 +21,37 @@
       .header table tr td:first-child {
         font-weight: bold;
       }
+
+      .chart {
+        width: 100%;
+        height: 250px;
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <!-- Table Header -->
       <div class="header">
-        <table cellspacing="10">
+        <table cellspacing="0" cellpadding="8">
           <tr>
-            <td>Nama Perusahaan</td>
-            <td>PT. BTS.id</td>
+            <td>Nomor</td>
+            <td>1</td>
           </tr>
           <tr>
-            <td>Target Job</td>
-            <td>Direktur</td>
+            <td>Nama</td>
+            <td>Cody Fisher</td>
+          </tr>
+          <tr>
+            <td>Jenis Kelamin</td>
+            <td>Perempuan</td>
+          </tr>
+          <tr>
+            <td>Pendidikan</td>
+            <td>S1 Teknik Informatika</td>
+          </tr>
+          <tr>
+            <td>Perusahaan</td>
+            <td>PT. BTS.id</td>
           </tr>
           <tr>
             <td>Tanggal Assestment</td>
@@ -40,7 +61,7 @@
       </div>
 
       <!-- List Asesi -->
-      <div style="margin-top: 20px">
+      <div style="margin-top: 20px; margin-bottom: 20px">
         <h3>Laporan</h3>
         <table
           border="1"
@@ -89,84 +110,178 @@
               <td>3</td>
               <td>3</td>
               <td>4</td>
-              <td style="border: none; background-color: white"></td>
-              <td style="border: none; background-color: white"></td>
+              <td
+                style="
+                  border-right: 1px solid #fff;
+                  border-bottom: 1px solid #fff;
+                "
+              ></td>
+              <td
+                style="
+                  border-right: 1px solid #fff;
+                  border-bottom: 1px solid #fff;
+                "
+              ></td>
             </tr>
           </tbody>
         </table>
       </div>
 
+      <!-- Graphs -->
       <div
         style="
-          margin-top: 40px;
           display: grid;
           grid-template-columns: repeat(1, 1fr);
-          justify-content: start;
+          justify-content: center;
           align-items: center;
+          flex-direction: column;
+          width: 100%;
         "
       >
-        <div>
-          <h3>Graph 1 Most</h3>
-          <p>Mask, Public Self</p>
-          <div id="chart-1"></div>
+        <div style="margin-bottom: 40px">
+          <div id="graph-1" class="chart"></div>
+        </div>
+        <div style="margin-bottom: 40px">
+          <div id="graph-2" class="chart"></div>
         </div>
         <div>
-          <h3>Graph 2 Least</h3>
-          <p>Mask, Private Self</p>
-          <div id="chart-2"></div>
-        </div>
-        <div>
-          <h3>Graph 3 Change</h3>
-          <p>Mask, Private Self</p>
-          <div id="chart-3"></div>
+          <div id="graph-3" class="chart"></div>
         </div>
       </div>
+
+      <script src="https://www.gstatic.com/charts/loader.js"></script>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/frappe-charts@1.2.4/dist/frappe-charts.min.iife.js"></script>
-    <!-- Chart Here -->
     <script>
-      new frappe.Chart("#chart-1", {
-        data: {
-          labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-          datasets: [
-            { name: "Dataset 1", values: [18, 40, 30, 35, 8, 52, 17, -4] },
-            { name: "Dataset 2", values: [30, 50, -10, 15, 18, 32, 27, 14] }
-          ]
-        },
-        type: "line",
-        height: 250,
-        colors: ["red"],
-        legend: "none"
-      })
+      let width = document.documentElement.ClientWidth
+      let height = document.documentElement.ClientHeight
 
-      new frappe.Chart("#chart-2", {
-        data: {
-          labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-          datasets: [
-            { name: "Dataset 1", values: [18, 40, 30, 35, 8, 52, 17, -4] },
-            { name: "Dataset 2", values: [30, 50, -10, 15, 18, 32, 27, 14] }
-          ]
-        },
-        type: "line",
-        height: 250,
-        colors: ["red"],
-        legend: "none"
-      })
+      google.charts.load("current", { packages: ["corechart"] })
+      google.charts.setOnLoadCallback(chartOne)
+      google.charts.setOnLoadCallback(chartTwo)
+      google.charts.setOnLoadCallback(chartThree)
 
-      new frappe.Chart("#chart-3", {
-        data: {
-          labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-          datasets: [
-            { name: "Dataset 1", values: [18, 40, 30, 35, 8, 52, 17, -4] },
-            { name: "Dataset 2", values: [30, 50, -10, 15, 18, 32, 27, 14] }
-          ]
-        },
-        type: "line",
-        height: 250,
-        colors: ["red"],
-        legend: "none"
-      })
+      function chartOne() {
+        var data = new google.visualization.DataTable()
+        data.addColumn("string", "")
+        data.addColumn("number", "value")
+
+        data.addRows([
+          ["D", 0.5],
+          ["I", 0.5],
+          ["S", 0.8],
+          ["C", 0.1]
+        ])
+
+        var options = {
+          title: "Graph 1 MOST",
+          legend: {
+            position: "none"
+          },
+          colors: ["#fea516"]
+        }
+
+        var chart_div = document.getElementById("graph-1")
+        var chart = new google.visualization.LineChart(chart_div)
+
+        google.visualization.events.addListener(chart, "ready", function () {
+          chart_div.innerHTML = '<img src="' + chart.getImageURI() + '">'
+        })
+
+        chart.draw(data, options)
+      }
+
+      function chartTwo() {
+        var data = new google.visualization.DataTable()
+        data.addColumn("string", "")
+        data.addColumn("number", "value")
+
+        data.addRows([
+          ["D", 0.5],
+          ["I", 0.5],
+          ["S", 0.8],
+          ["C", 0.1]
+        ])
+
+        var options = {
+          title: "Graph 2 LEAST",
+          legend: {
+            position: "none"
+          },
+          colors: ["#fea516"]
+        }
+
+        var chart_div = document.getElementById("graph-2")
+        var chart = new google.visualization.LineChart(chart_div)
+
+        google.visualization.events.addListener(chart, "ready", function () {
+          chart_div.innerHTML = '<img src="' + chart.getImageURI() + '">'
+        })
+
+        chart.draw(data, options)
+      }
+
+      function chartThree() {
+        var data = new google.visualization.DataTable()
+        data.addColumn("string", "")
+        data.addColumn("number", "value")
+
+        data.addRows([
+          ["D", 0.5],
+          ["I", 0.5],
+          ["S", 0.8],
+          ["C", 0.1]
+        ])
+
+        var options = {
+          title: "Graph 3 CHANGE",
+          legend: {
+            position: "none"
+          },
+          colors: ["#fea516"]
+        }
+
+        var chart_div = document.getElementById("graph-3")
+        var chart = new google.visualization.LineChart(chart_div)
+
+        google.visualization.events.addListener(chart, "ready", function () {
+          chart_div.innerHTML = '<img src="' + chart.getImageURI() + '">'
+        })
+
+        chart.draw(data, options)
+      }
+
+      var beforePrint = function () {
+        // google.charts.setOnLoadCallback(chartTwo)
+        // google.charts.setOnLoadCallback(chartThree)
+      }
+
+      var afterPrint = function () {
+        // google.charts.setOnLoadCallback(chartOne)
+        // google.charts.setOnLoadCallback(chartTwo)
+        // google.charts.setOnLoadCallback(chartThree)
+      }
+
+      function onResizeFunc() {
+        google.charts.setOnLoadCallback(chartOne)
+        google.charts.setOnLoadCallback(chartTwo)
+        google.charts.setOnLoadCallback(chartThree)
+        if (window.matchMedia) {
+          var mediaQueryList = window.matchMedia("print")
+          mediaQueryList.addListener(function (mql) {
+            if (mql.matches) {
+              google.charts.setOnLoadCallback(chartOne)
+              google.charts.setOnLoadCallback(chartTwo)
+              google.charts.setOnLoadCallback(chartThree)
+              beforePrint()
+            } else {
+              afterPrint()
+            }
+          })
+        }
+
+        window.onbeforeprint = beforePrint
+        window.onafterprint = afterPrint
+      }
     </script>
   </body>
 </html>
