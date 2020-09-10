@@ -18,16 +18,16 @@
         width: 50%;
       }
 
-      .container .right-side {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+      .remove-border {
+        border-left: 1px #fff solid;
+        border-bottom: 1px #fff solid;
+        border-top: 1px #fff solid;
       }
     </style>
   </head>
   <body>
     <div class="header">
-      <table cellspacing="10" style="width: 100%">
+      <table cellspacing="10" style="width: 100%; margin-bottom: 20px">
         <tr>
           <td>Nomor</td>
           <td>1</td>
@@ -55,37 +55,48 @@
       </table>
     </div>
 
-    <div>
-      <!-- Grafik dengan standar pendidikan -->
-      <div style="margin-bottom: 20px" class="graph-container">
-        <div
-          id="grafik-dengan-standar-pendidikan"
-          style="margin-bottom: 20px"
-        ></div>
-        <strong>Grafik dengan standar pendidikan</strong>
-        <table>
-          <tr>
-            <td>rata-rata = 110</td>
-            <td>rata-rata ideal = 0</td>
-            <td>SD = 0</td>
-          </tr>
-        </table>
-      </div>
-
-      <!-- Grafik dengan standar pekerjaan -->
+    <div
+      style="
+        display: grid;
+        grid-template-columns: 70% 30%;
+        justify-content: center;
+      "
+    >
+      <!-- Grapich -->
       <div>
-        <div
-          id="grafik-dengan-standar-pekerjaan"
-          style="margin-bottom: 20px"
-        ></div>
-        <strong>Grafik dengan standar pendidikan</strong>
-        <table>
-          <tr>
-            <td>rata-rata = 110</td>
-            <td>rata-rata ideal = 0</td>
-            <td>SD = 0</td>
-          </tr>
-        </table>
+        <!-- Grafik dengan standar pendidikan -->
+        <div style="margin-bottom: 20px">
+          <div style="text-align: center">
+            <div
+              id="grafik-dengan-standar-pendidikan"
+              style="margin-bottom: 20px"
+            ></div>
+          </div>
+          <strong>Grafik dengan standar pendidikan</strong>
+          <table style="margin-bottom: 20px">
+            <tr>
+              <td>rata-rata = 110</td>
+              <td>rata-rata ideal = 0</td>
+              <td>SD = 0</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Grafik dengan standar pekerjaan -->
+        <div>
+          <div
+            id="grafik-dengan-standar-pekerjaan"
+            style="margin-bottom: 20px"
+          ></div>
+          <strong>Grafik dengan standar pendidikan</strong>
+          <table>
+            <tr>
+              <td>rata-rata = 110</td>
+              <td>rata-rata ideal = 0</td>
+              <td>SD = 0</td>
+            </tr>
+          </table>
+        </div>
       </div>
 
       <div>
@@ -98,12 +109,7 @@
         >
           <thead>
             <tr>
-              <th
-                style="
-                  border-left: 1px solid #fff !important;
-                  border-top: 1px solid #fff !important;
-                "
-              ></th>
+              <th class="remove-border"></th>
               <th>RW</th>
               <th>SW</th>
             </tr>
@@ -111,60 +117,60 @@
 
           <tbody>
             <tr>
-              <th>SE</th>
+              <th class="remove-border">SE</th>
               <th>12</th>
               <th>11</th>
             </tr>
             <tr>
-              <th>WA</th>
-              <th>12</th>
-              <th>11</th>
-            </tr>
-
-            <tr>
-              <th>AN</th>
+              <th class="remove-border">WA</th>
               <th>12</th>
               <th>11</th>
             </tr>
 
             <tr>
-              <th>GE</th>
+              <th class="remove-border">AN</th>
               <th>12</th>
               <th>11</th>
             </tr>
 
             <tr>
-              <th>RA</th>
+              <th class="remove-border">GE</th>
               <th>12</th>
               <th>11</th>
             </tr>
 
             <tr>
-              <th>ZR</th>
+              <th class="remove-border">RA</th>
               <th>12</th>
               <th>11</th>
             </tr>
 
             <tr>
-              <th>FA</th>
+              <th class="remove-border">ZR</th>
               <th>12</th>
               <th>11</th>
             </tr>
 
             <tr>
-              <th>WU</th>
+              <th class="remove-border">FA</th>
               <th>12</th>
               <th>11</th>
             </tr>
 
             <tr>
-              <th>ME</th>
+              <th class="remove-border">WU</th>
               <th>12</th>
               <th>11</th>
             </tr>
 
             <tr>
-              <th>Jumlah</th>
+              <th class="remove-border">ME</th>
+              <th>12</th>
+              <th>11</th>
+            </tr>
+
+            <tr>
+              <th class="remove-border">Jumlah</th>
               <th>12</th>
               <th>11</th>
             </tr>
@@ -184,19 +190,19 @@
           </tfoot>
         </table>
 
-        <div style="margin-top: 20px">
-          <table>
-            <tr>
+        <div style="margin-top: 20px; float: right; margin-left: auto">
+          <table border="1" cellpadding="10" style="border-collapse: collapse">
+            <tr style="border: 1px #fff">
               <td>GE + RA</td>
               <td>></td>
               <td>AN +ZR</td>
             </tr>
-            <tr>
+            <tr style="border: 1px #fff">
               <td>227</td>
               <td>></td>
               <td>218</td>
             </tr>
-            <tr>
+            <tr style="border: 1px #fff">
               <td>Selisih</td>
               <td>=</td>
               <td>9</td>
@@ -242,6 +248,7 @@
             position: "none"
           },
           width: 500,
+          height: 200,
           axes: {
             x: {
               0: { side: "top" }
@@ -276,6 +283,8 @@
           legend: {
             position: "none"
           },
+          width: 500,
+          height: 200,
           axes: {
             x: {
               0: { side: "top" }
