@@ -57,7 +57,7 @@
 
     <div>
       <!-- Grafik dengan standar pendidikan -->
-      <div style="margin-bottom: 20px">
+      <div style="margin-bottom: 20px" class="graph-container">
         <div
           id="grafik-dengan-standar-pendidikan"
           style="margin-bottom: 20px"
@@ -238,8 +238,10 @@
         ])
 
         var options = {
-          width: 900,
-          height: 200,
+          legend: {
+            position: "none"
+          },
+          width: 500,
           axes: {
             x: {
               0: { side: "top" }
@@ -271,8 +273,9 @@
         ])
 
         var options = {
-          width: 900,
-          height: 200,
+          legend: {
+            position: "none"
+          },
           axes: {
             x: {
               0: { side: "top" }
