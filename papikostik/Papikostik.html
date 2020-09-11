@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Papikostik PDF</title>
+    <style></style>
+  </head>
+  <body>
+    <div style="display: flex; align-items: center; justify-content: center">
+      <canvas id="papikostik" width="720" height="720"></canvas>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Package for loading the line in papikostik  -->
+    <script src="./fabric.min.js"></script>
+    <!-- Real fake data from the API -->
+    <script src="./realCoordinates.js"></script>
+    <!-- Coordintes for the number in Papikostik Image -->
+    <script src="./coordinates.js"></script>
+    <!-- Ordered Keys: orderedKeys, bottomGroup, topGroup -->
+    <script src="./keys.js"></script>
+
+    <!-- Init the papikostik -->
+    <script>
+      // States
+      let polygons = []
+      let points = []
+      let groups = []
+
+      // fetch data for papikostik
+      const fetchPapikostik = () => {
+        orederedKeys.map((item) => {
+          polygons.push(coordinates[item][realData[item]])
+          points.push({
+            radius: 5,
+            fill: "#ffa10b",
+            left: coordinates[item][realData[item]].x,
+            top: coordinates[item][realData[item]].y,
+            selectable: false,
+            originX: "center",
+            originY: "center",
+            hoverCursor: "auto"
+          })
+        })
+      }
+
+      fetchPapikostik()
+
+      const drawCanvas = () => {
+        // Polygon from fabric.js
+        let polygon = new fabric.Polygon(polygons, {
+          fill: "rgba(0,0,0,0)",
+          stroke: "#ffa10b",
+          strokeWidth: 2
+        })
+
+        var canvas = new fabric.Canvas("papikostik")
+        fabric.Image.fromURL("bpi-papikostik.png", (imgObject) => {
+          let obj = imgObject.set({ left: -15, top: -70 })
+          obj.scale(0.8)
+          groups.push(obj)
+          groups.push(polygon)
+
+          points.map((item) => {
+            let circlePoints = new fabric.Circle(item)
+            groups.push(circlePoints)
+          })
+
+          let group = new fabric.Group(groups, {
+            left: -15,
+            top: -70
+          })
+
+          canvas.add(group)
+          canvas.item(0).lockMovementY = true
+          canvas.item(0).lockMovementX = true
+          canvas.item(0).hasControls = canvas.item(0).hasBorders = false
+        })
+      }
+      drawCanvas()
+    </script>
+  </body>
+</html>
