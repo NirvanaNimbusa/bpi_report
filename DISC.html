@@ -4,60 +4,53 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Berita Acara PDF</title>
-    <style>
-      body {
-        font-size: 12px;
-      }
-
-      table {
-        border-collapse: collapse;
-      }
-
-      /* Table Header */
-      .header {
-        width: 50%;
-      }
-
-      .header table tr td:first-child {
-        font-weight: bold;
-      }
-    </style>
+    <link rel="stylesheet" href="./globalStyles.css" />
   </head>
   <body>
-    <div class="container">
-      <!-- Table Header -->
-      <div class="header">
-        <table cellspacing="0" cellpadding="8">
-          <tr>
-            <td>Nomor</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>Nama</td>
-            <td>Cody Fisher</td>
-          </tr>
-          <tr>
-            <td>Jenis Kelamin</td>
-            <td>Perempuan</td>
-          </tr>
-          <tr>
-            <td>Pendidikan</td>
-            <td>S1 Teknik Informatika</td>
-          </tr>
-          <tr>
-            <td>Perusahaan</td>
-            <td>PT. BTS.id</td>
-          </tr>
-          <tr>
-            <td>Tanggal Assestment</td>
-            <td>17/08/1945</td>
-          </tr>
-        </table>
+    <div class="card">
+      <div class="card-header">
+        <h3>Informasi Asesi</h3>
       </div>
+      <div class="card-body">
+        <div class="grid">
+          <div>
+            <p><strong>Nomor</strong></p>
+            <p>1</p>
+          </div>
+          <div>
+            <p><strong>Nama</strong></p>
+            <td>Cody Fisher</td>
+          </div>
+          <div>
+            <p><strong>Perusahaan</strong></p>
+            <p>PT. BTS.id</p>
+          </div>
+          <div>
+            <p><strong>Pendidikan</strong></p>
+            <p>S1 Teknik Informatika</p>
+          </div>
+          <div>
+            <p><strong>Jenis Kelamin</strong></p>
+            <p>Perempuan</p>
+          </div>
+          <div>
+            <p><strong>Usia</strong></p>
+            <p>23 Tahun</p>
+          </div>
+          <div>
+            <p><strong>Tanggal Assestment</strong></p>
+            <p>17/08/1945</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      <!-- List Asesi -->
-      <div style="margin-top: 20px; margin-bottom: 20px">
+    <!-- Laporan -->
+    <div class="card">
+      <div class="card-header">
         <h3>Laporan</h3>
+      </div>
+      <div class="card-body">
         <table
           border="1"
           bordercolor="#555"
@@ -121,30 +114,30 @@
           </tbody>
         </table>
       </div>
-
-      <!-- Graphs -->
-      <div
-        style="
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          justify-content: center;
-          align-items: center;
-          text-align: center !important;
-        "
-      >
-        <div>
-          <div id="graph-1" class="chart"></div>
-        </div>
-        <div>
-          <div id="graph-2" class="chart"></div>
-        </div>
-        <div>
-          <div id="graph-3" class="chart"></div>
-        </div>
-      </div>
-
-      <script src="https://www.gstatic.com/charts/loader.js"></script>
     </div>
+
+    <!-- Graphs -->
+    <div
+      style="
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+        text-align: center !important;
+      "
+    >
+      <div>
+        <div id="graph-1" class="chart" style="margin-left: 20px"></div>
+      </div>
+      <div>
+        <div id="graph-2" class="chart"></div>
+      </div>
+      <div>
+        <div id="graph-3" class="chart"></div>
+      </div>
+    </div>
+
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script>
       google.charts.load("current", { packages: ["corechart"] })
       google.charts.setOnLoadCallback(chartOne)

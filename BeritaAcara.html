@@ -4,44 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Berita Acara PDF</title>
-    <style>
-      body {
-        font-size: 18px;
-      }
-
-      /* Table Header */
-      .header {
-        width: 50%;
-      }
-
-      .header table tr td:first-child {
-        font-weight: bold;
-      }
-    </style>
+    <link rel="stylesheet" href="./globalStyles.css" />
   </head>
   <body>
-    <div class="container">
-      <!-- Table Header -->
-      <div class="header">
-        <table cellspacing="10">
-          <tr>
-            <td>Nama Perusahaan</td>
-            <td>PT. BTS.id</td>
-          </tr>
-          <tr>
-            <td>Target Job</td>
-            <td>Direktur</td>
-          </tr>
-          <tr>
-            <td>Tanggal Assestment</td>
-            <td>17/08/1945</td>
-          </tr>
-        </table>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="text-center">Informasi Assesment</h3>
       </div>
+      <div class="card-body">
+        <div class="grid">
+          <div>
+            <p><strong>Nama Perusahaan</strong></p>
+            <p>PT. Solusi Asia</p>
+          </div>
 
-      <!-- List Asesi -->
-      <div style="margin-top: 20px">
+          <div>
+            <p><strong>Target Job</strong></p>
+            <p>Direktur</p>
+          </div>
+
+          <div>
+            <p><strong>Target Tanggal Assestment</strong></p>
+            <p>10/10/2020</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- List Asesi -->
+    <div class="card">
+      <div class="card-header" style="margin-bottom: 20px">
         <h3>Daftar Asesi</h3>
+      </div>
+      <div class="card-body">
         <table
           border="1"
           bordercolor="#555"
@@ -117,10 +112,14 @@
           </tbody>
         </table>
       </div>
+    </div>
 
-      <!-- List Asesor -->
-      <div style="margin-top: 20px">
+    <!-- List Asesor -->
+    <div class="card">
+      <div class="card-header" style="margin-bottom: 20px">
         <h3>Daftar Asesor</h3>
+      </div>
+      <div class="card-body">
         <table
           border="1"
           bordercolor="#555"

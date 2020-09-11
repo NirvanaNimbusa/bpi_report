@@ -4,14 +4,177 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Papikostik PDF</title>
-    <style></style>
+    <link rel="stylesheet" href="../globalStyles.css" />
   </head>
   <body>
-    <div style="display: flex; align-items: center; justify-content: center">
-      <canvas id="papikostik" width="720" height="720"></canvas>
+    <div class="card">
+      <div class="card-header">
+        <h3>Informasi Asesi</h3>
+      </div>
+      <div class="card-body">
+        <div class="grid">
+          <div>
+            <p><strong>Nomor</strong></p>
+            <p>1</p>
+          </div>
+          <div>
+            <p><strong>Nama</strong></p>
+            <td>Cody Fisher</td>
+          </div>
+          <div>
+            <p><strong>Perusahaan</strong></p>
+            <p>PT. BTS.id</p>
+          </div>
+          <div>
+            <p><strong>Pendidikan</strong></p>
+            <p>S1 Teknik Informatika</p>
+          </div>
+          <div>
+            <p><strong>Jenis Kelamin</strong></p>
+            <p>Perempuan</p>
+          </div>
+          <div>
+            <p><strong>Usia</strong></p>
+            <p>23 Tahun</p>
+          </div>
+          <div>
+            <p><strong>Tanggal Assestment</strong></p>
+            <p>17/08/1945</p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <div class="card">
+      <div class="card-header">
+        <h3>Laporan</h3>
+      </div>
+      <div class="card-body">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+          "
+        >
+          <canvas id="papikostik" width="720" height="720"></canvas>
+
+          <div
+            style="
+              padding: 10px;
+              margin-top: 40px;
+              border: 0px #000 solid !important;
+              box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2),
+                1px 1px 2px rgba(0, 0, 0, 0.2);
+              border-radius: 5px;
+            "
+          >
+            <!-- Up -->
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(10, 1fr);
+                grid-gap: 20px;
+              "
+            >
+              <div>
+                <p><strong>G</strong></p>
+                <p>5</p>
+              </div>
+              <div>
+                <p><strong>L</strong></p>
+                <p>6</p>
+              </div>
+              <div>
+                <p><strong>I</strong></p>
+                <p>2</p>
+              </div>
+              <div>
+                <p><strong>T</strong></p>
+                <p>2</p>
+              </div>
+              <div>
+                <p><strong>V</strong></p>
+                <p>2</p>
+              </div>
+              <div>
+                <p><strong>S</strong></p>
+                <p>4</p>
+              </div>
+              <div>
+                <p><strong>R</strong></p>
+                <p>7</p>
+              </div>
+              <div>
+                <p><strong>D</strong></p>
+                <p>6</p>
+              </div>
+              <div>
+                <p><strong>C</strong></p>
+                <p>8</p>
+              </div>
+              <div>
+                <p><strong>E</strong></p>
+                <p>4</p>
+              </div>
+            </div>
+
+            <hr />
+
+            <!-- Down -->
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(10, 1fr);
+                grid-gap: 20px;
+              "
+            >
+              <div>
+                <p><strong>N</strong></p>
+                <p>5</p>
+              </div>
+              <div>
+                <p><strong>A</strong></p>
+                <p>6</p>
+              </div>
+              <div>
+                <p><strong>P</strong></p>
+                <p>2</p>
+              </div>
+              <div>
+                <p><strong>X</strong></p>
+                <p>2</p>
+              </div>
+              <div>
+                <p><strong>B</strong></p>
+                <p>2</p>
+              </div>
+              <div>
+                <p><strong>O</strong></p>
+                <p>4</p>
+              </div>
+              <div>
+                <p><strong>Z</strong></p>
+                <p>7</p>
+              </div>
+              <div>
+                <p><strong>K</strong></p>
+                <p>6</p>
+              </div>
+              <div>
+                <p><strong>F</strong></p>
+                <p>8</p>
+              </div>
+              <div>
+                <p><strong>W</strong></p>
+                <p>4</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Package for loading the line in papikostik  -->
     <script src="./fabric.min.js"></script>
@@ -45,9 +208,9 @@
           })
         })
       }
-
       fetchPapikostik()
 
+      // Init the canvas and the papikostik image
       const drawCanvas = () => {
         // Polygon from fabric.js
         let polygon = new fabric.Polygon(polygons, {

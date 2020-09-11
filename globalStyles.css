@@ -1,0 +1,80 @@
+body {
+  font-size: 12px;
+}
+
+table {
+  border-collapse: collapse;
+  page-break-inside: auto;
+}
+
+table tr {
+  border-color: 1px #ddd solid;
+}
+
+tr {
+  page-break-inside: avoid;
+  page-break-after: auto;
+}
+
+thead {
+  display: table-header-group;
+}
+
+tfoot {
+  display: table-footer-group;
+}
+
+div {
+  page-break-inside: avoid;
+}
+
+.header table tr td:first-child {
+  font-weight: bold;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.card {
+  /* border: 1px #ccc solid; */
+  border-radius: 8px;
+  padding: 5px 20px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.card .card-header {
+  border-bottom: 1px #ccc solid;
+}
+
+.card .card-body {
+  background-color: #fff;
+  padding-bottom: 5px;
+}
+
+/* When Print */
+@media print {
+  div {
+    page-break-inside: avoid;
+  }
+
+  table {
+    page-break-after: auto;
+  }
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+  td {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tfoot {
+    display: table-footer-group;
+  }
+}
