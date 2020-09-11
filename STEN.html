@@ -36,6 +36,29 @@
         background-color: #fea516 !important;
       }
 
+      .body-no-border tr td:nth-child(n + 3) {
+        border: 1px #ccc dotted;
+      }
+
+      .body-no-border tr td:nth-child(n + 13) {
+        border: 1px #ccc solid;
+        background-color: white;
+      }
+
+      .table-data-title-first {
+        text-align: right;
+        font-weight: bold;
+      }
+
+      .table-data-title-last {
+        text-align: left;
+        font-weight: bold;
+      }
+
+      .table-data-red {
+        color: red;
+      }
+
       @media print {
         .line {
           -webkit-print-color-adjust: exact;
@@ -87,7 +110,7 @@
           </tr>
         </thead>
 
-        <tbody>
+        <tbody class="body-no-border">
           <tr>
             <td>Reserved, impersonal, distant to others</td>
             <td>A</td>
@@ -434,7 +457,6 @@
 
     <!-- ORDER BIG 5 -->
     <div style="margin-top: 40px">
-      <h3>ORDER BIG 5</h3>
       <table
         border="1"
         bordercolor="#ccc"
@@ -442,9 +464,20 @@
         cellpadding="10"
         style="width: 100%"
       >
-        <thead>
-          <th>2nd ORDER</th>
-          <th>1</th>
+        <tr>
+          <th colspan="12">
+            COMPONENTS OF SECOND ORDER (CATTEL - McRAE&COSTA)
+          </th>
+        </tr>
+
+        <!-- Extraversion -->
+        <tr>
+          <th colspan="12">E X T R A V E R S I O N</th>
+        </tr>
+
+        <tr>
+          <td class="table-data-title-first">Introversion</td>
+          <th class="table-data-red">1</th>
           <th>2</th>
           <th>3</th>
           <th>4</th>
@@ -454,55 +487,423 @@
           <th>8</th>
           <th>9</th>
           <th>10</th>
-          <th>Sumber</th>
-        </thead>
+          <td class="table-data-title-last">Extraversion</td>
+        </tr>
 
-        <tbody>
-          <tr>
-            <th></th>
-            <th>4-7</th>
-            <th>4-7</th>
-            <th>4-7</th>
-            <th>4-7</th>
-            <th>4-7</th>
-            <th>4-7</th>
-            <th>4-7</th>
-            <th>4-7</th>
-            <th>4-7</th>
-            <th></th>
-            <th>PSIAD</th>
-          </tr>
+        <tr>
+          <td class="table-data-title-first">(A-) Reserved</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Warm(A+)</td>
+        </tr>
 
-          <tr>
-            <th style="text-align: left">EXTR</th>
-            <th>4-7</th>
-            <th>4-7</th>
-            <th>4-7</th>
-            <th>4-7</th>
-            <th>4-7</th>
-            <th>4-7</th>
-            <th>4-7</th>
-            <th>4-7</th>
-            <th>4-7</th>
-            <th>18-2</th>
-            <th>BARU</th>
-          </tr>
+        <tr>
+          <td class="table-data-title-first">(F-) Serious</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Lively(F+)</td>
+        </tr>
 
-          <tr>
-            <th style="text-align: left">ANX, TOUGH M, INDEP, S CONTROL</th>
-            <th>4-7</th>
-            <th>4-7</th>
-            <th>4-7</th>
-            <th>4-7</th>
-            <th>4-7</th>
-            <th>4-7</th>
-            <th>4-7</th>
-            <th>4-7</th>
-            <th>4-7</th>
-            <th>18-2</th>
-            <th>BARU</th>
-          </tr>
-        </tbody>
+        <tr>
+          <td class="table-data-title-first">(H-) Shy</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Bold(H+)</td>
+        </tr>
+
+        <tr>
+          <td class="table-data-title-first">(N+) Private</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Fortnight(N-)</td>
+        </tr>
+
+        <tr>
+          <td class="table-data-title-first">(Q2+) Self Reiliant</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Group - Oriented(Q2)</td>
+        </tr>
+
+        <!-- Neurocristim -->
+        <tr>
+          <th colspan="12">N E U R O C R I T I S M</th>
+        </tr>
+
+        <tr>
+          <td class="table-data-title-first">Low-Axiety</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">High-Axiety</td>
+        </tr>
+
+        <tr>
+          <td class="table-data-title-first">(C+) Emotionally-stable</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Reactive (C-)</td>
+        </tr>
+
+        <tr>
+          <td class="table-data-title-first">(L-) Trusting</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Vigilant(L+)</td>
+        </tr>
+
+        <tr>
+          <td class="table-data-title-first">(O-) Self-Assured</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Apperhensive(O+)</td>
+        </tr>
+
+        <tr>
+          <td class="table-data-title-first">(Q4-) Relaxed</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Tense (Q4+)</td>
+        </tr>
+
+        <!-- Opennes To Experience -->
+        <tr>
+          <th colspan="12">OPENNESS TO EXPERIENCE</th>
+        </tr>
+
+        <tr>
+          <td class="table-data-title-first">Tough-Mindedness</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Receptivity</td>
+        </tr>
+
+        <tr>
+          <td class="table-data-title-first">(A-) Reserved</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Warm(A+)</td>
+        </tr>
+
+        <tr>
+          <td class="table-data-title-first">(I-) Unsentimental</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Sensitive (I+)</td>
+        </tr>
+
+        <tr>
+          <td class="table-data-title-first">(M-) Practical</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Imaginative (M+)</td>
+        </tr>
+
+        <tr>
+          <td class="table-data-title-first">(Q1+) Traditional</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Openness To Change (Q1+)</td>
+        </tr>
+
+        <!-- Agree Ableness -->
+        <tr>
+          <th colspan="12">A G R E E A B L E N E S S</th>
+        </tr>
+
+        <tr>
+          <td class="table-data-title-first">Independence</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Accomodation</td>
+        </tr>
+
+        <tr>
+          <td class="table-data-title-first">(E+) Dominant</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Deferential (E-)</td>
+        </tr>
+
+        <tr>
+          <td class="table-data-title-first">(H+) Bold</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Shy (H-)</td>
+        </tr>
+
+        <tr>
+          <td class="table-data-title-first">(L+) Vigilant</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Trusting (L-)</td>
+        </tr>
+
+        <tr>
+          <td class="table-data-title-first">(Q1+) Openness To Change</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Traditional (Q1-)</td>
+        </tr>
+
+        <!-- CONSCIENTIOUSNESS -->
+        <tr>
+          <th colspan="12">C O N S C I E N T I O U S N E S S</th>
+        </tr>
+
+        <tr>
+          <td class="table-data-title-first">Lack Of Restraint</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Self Control</td>
+        </tr>
+
+        <tr>
+          <td class="table-data-title-first">(E+) Lively</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Serious (F-)</td>
+        </tr>
+
+        <tr>
+          <td class="table-data-title-first">(G-) Expedient</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Rule-Consious (G+)</td>
+        </tr>
+
+        <tr>
+          <td class="table-data-title-first">(M+) Imaginative</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Practical (M-)</td>
+        </tr>
+
+        <tr>
+          <td class="table-data-title-first">(Q3-) Tolerates Disorder</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Perfectionist (Q3+)</td>
+        </tr>
+
+        <!-- REASONING -->
+        <tr>
+          <th colspan="12">R E A S O I N G</th>
+        </tr>
+
+        <tr>
+          <td class="table-data-title-first">(B-) Concrete-Thinking</td>
+          <th class="table-data-red">1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <td class="table-data-title-last">Abstract-Thinking (B+)</td>
+        </tr>
       </table>
     </div>
 
