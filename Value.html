@@ -4,45 +4,96 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team Style PDF</title>
-    <link rel="stylesheet" href="./globalStyles.css" />
+    <style>
+      body {
+        font-size: 12px;
+      }
+
+      table {
+        border-collapse: collapse;
+        page-break-inside: auto;
+      }
+
+      table tr {
+        border-color: 1px #ddd solid;
+      }
+
+      tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+      }
+
+      thead {
+        display: table-header-group;
+      }
+
+      tfoot {
+        display: table-footer-group;
+      }
+
+      div {
+        page-break-inside: avoid;
+      }
+
+      .profile table tr td:first-child {
+        font-weight: bold;
+      }
+
+      /* When Print */
+      @media print {
+        div {
+          page-break-inside: avoid;
+        }
+
+        table {
+          page-break-after: auto;
+        }
+        tr {
+          page-break-inside: avoid;
+          page-break-after: auto;
+        }
+        td {
+          page-break-inside: avoid;
+          page-break-after: auto;
+        }
+        thead {
+          display: table-header-group;
+        }
+        tfoot {
+          display: table-footer-group;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div class="card">
-      <div class="card-header">
-        <h3>Informasi Asesi</h3>
-      </div>
-      <div class="card-body">
-        <div class="grid">
-          <div>
-            <p><strong>Nomor</strong></p>
-            <p>1</p>
-          </div>
-          <div>
-            <p><strong>Nama</strong></p>
-            <td>Cody Fisher</td>
-          </div>
-          <div>
-            <p><strong>Perusahaan</strong></p>
-            <p>PT. BTS.id</p>
-          </div>
-          <div>
-            <p><strong>Pendidikan</strong></p>
-            <p>S1 Teknik Informatika</p>
-          </div>
-          <div>
-            <p><strong>Jenis Kelamin</strong></p>
-            <p>Perempuan</p>
-          </div>
-          <div>
-            <p><strong>Usia</strong></p>
-            <p>23 Tahun</p>
-          </div>
-          <div>
-            <p><strong>Tanggal Assestment</strong></p>
-            <p>17/08/1945</p>
-          </div>
-        </div>
-      </div>
+    <!-- Profile -->
+    <div
+      style="display: flex; justify-content: center; align-items: center"
+      class="profile"
+    >
+      <table style="margin-left: 40px">
+        <tr>
+          <td>Nama</td>
+          <td></td>
+          <td>John Doe</td>
+        </tr>
+      </table>
+
+      <table style="margin-left: 40px">
+        <tr>
+          <td>NO</td>
+          <td></td>
+          <td>2</td>
+        </tr>
+      </table>
+
+      <table style="margin-left: 40px">
+        <tr>
+          <td>Consis</td>
+          <td></td>
+          <td>8</td>
+        </tr>
+      </table>
     </div>
 
     <!-- Psikogram Value -->
