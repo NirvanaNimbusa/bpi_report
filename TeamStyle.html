@@ -4,124 +4,147 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team Style PDF</title>
-    <link rel="stylesheet" href="./globalStyles.css" />
+    <style>
+      body {
+        font-size: 12px;
+      }
+
+      table {
+        border-collapse: collapse;
+        page-break-inside: auto;
+      }
+
+      table tr {
+        border-color: 1px #ddd solid;
+      }
+
+      tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+      }
+
+      thead {
+        display: table-header-group;
+      }
+
+      tfoot {
+        display: table-footer-group;
+      }
+
+      div {
+        page-break-inside: avoid;
+      }
+
+      /* When Print */
+      @media print {
+        div {
+          page-break-inside: avoid;
+        }
+
+        table {
+          page-break-after: auto;
+        }
+        tr {
+          page-break-inside: avoid;
+          page-break-after: auto;
+        }
+        td {
+          page-break-inside: avoid;
+          page-break-after: auto;
+        }
+        thead {
+          display: table-header-group;
+        }
+        tfoot {
+          display: table-footer-group;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div class="card">
-      <div class="card-header">
-        <h3>Informasi Asesi</h3>
-      </div>
-      <div class="card-body">
-        <div class="grid">
-          <div>
-            <p><strong>Nomor</strong></p>
-            <p>1</p>
-          </div>
-          <div>
-            <p><strong>Nama</strong></p>
-            <td>Cody Fisher</td>
-          </div>
-          <div>
-            <p><strong>Perusahaan</strong></p>
-            <p>PT. BTS.id</p>
-          </div>
-          <div>
-            <p><strong>Pendidikan</strong></p>
-            <p>S1 Teknik Informatika</p>
-          </div>
-          <div>
-            <p><strong>Jenis Kelamin</strong></p>
-            <p>Perempuan</p>
-          </div>
-          <div>
-            <p><strong>Usia</strong></p>
-            <p>23 Tahun</p>
-          </div>
-          <div>
-            <p><strong>Tanggal Assestment</strong></p>
-            <p>17/08/1945</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- Profile -->
+    <table cellpadding="5">
+      <tr>
+        <td>Nama</td>
+        <td>:</td>
+        <td>John Doe</td>
+      </tr>
 
-    <div class="card">
-      <div class="card-header">
-        <h3>Laporan</h3>
-      </div>
-      <div class="card-body">
-        <!-- Table Body -->
-        <div style="margin-top: 20px">
-          <table
-            border="1"
-            bordercolor="#555"
-            cellspacing="0"
-            cellpadding="10"
-            width="100%"
-          >
-            <thead>
-              <tr>
-                <th rowspan="2">Peran Dalam Tim</th>
-                <th colspan="2">Penilaian</th>
-              </tr>
+      <tr>
+        <td>Jenis Kelamin</td>
+        <td>:</td>
+        <td>Laki-Laki</td>
+      </tr>
+    </table>
 
-              <tr>
-                <th>Diri Sendiri</th>
-                <th>Orang Lain</th>
-              </tr>
-            </thead>
+    <!-- Content -->
+    <table
+      border="1"
+      bordercolor="#555"
+      cellspacing="0"
+      cellpadding="10"
+      width="100%"
+    >
+      <thead>
+        <tr>
+          <th rowspan="2">Peran Dalam Tim</th>
+          <th colspan="2">Penilaian</th>
+        </tr>
 
-            <!-- Value Here -->
-            <tbody>
-              <tr>
-                <td>Plant</td>
-                <td>0</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>Resource Investigator</td>
-                <td>0</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>Team Worker</td>
-                <td>0</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>Coordinator</td>
-                <td>0</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>Implementer</td>
-                <td>0</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>Specialist</td>
-                <td>0</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>Monitor Evaluation</td>
-                <td>0</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>Competer Finisher</td>
-                <td>0</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>Sharper</td>
-                <td>0</td>
-                <td>0</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+        <tr>
+          <th>Diri Sendiri</th>
+          <th>Orang Lain</th>
+        </tr>
+      </thead>
+
+      <!-- Value Here -->
+      <tbody>
+        <tr>
+          <td>Plant</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Resource Investigator</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Team Worker</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Coordinator</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Implementer</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Specialist</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Monitor Evaluation</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Competer Finisher</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Sharper</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>

@@ -4,116 +4,193 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Berita Acara PDF</title>
-    <link rel="stylesheet" href="./globalStyles.css" />
+    <style>
+      body {
+        font-size: 12px;
+      }
+
+      table {
+        border-collapse: collapse;
+        page-break-inside: auto;
+      }
+
+      table tr {
+        border-color: 1px #ddd solid;
+      }
+
+      tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+      }
+
+      .disc-table td {
+        text-align: center;
+      }
+
+      thead {
+        display: table-header-group;
+      }
+
+      tfoot {
+        display: table-footer-group;
+      }
+
+      div {
+        page-break-inside: avoid;
+      }
+
+      .header table tr td:first-child {
+        font-weight: bold;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 50% 50%;
+      }
+
+      .card {
+        /* border: 1px #ccc solid; */
+        border-radius: 8px;
+        padding: 5px 20px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        margin-bottom: 20px;
+      }
+
+      .card .card-header {
+        border-bottom: 1px #ccc solid;
+      }
+
+      .card .card-body {
+        background-color: #fff;
+        padding-bottom: 5px;
+      }
+
+      /* When Print */
+      @media print {
+        div {
+          page-break-inside: avoid;
+        }
+
+        table {
+          page-break-after: auto;
+        }
+        tr {
+          page-break-inside: avoid;
+          page-break-after: auto;
+        }
+        td {
+          page-break-inside: avoid;
+          page-break-after: auto;
+        }
+        thead {
+          display: table-header-group;
+        }
+        tfoot {
+          display: table-footer-group;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div class="card">
-      <div class="card-header">
-        <h3>Informasi Asesi</h3>
-      </div>
-      <div class="card-body">
-        <div class="grid">
-          <div>
-            <p><strong>Nomor</strong></p>
-            <p>1</p>
-          </div>
-          <div>
-            <p><strong>Nama</strong></p>
-            <td>Cody Fisher</td>
-          </div>
-          <div>
-            <p><strong>Perusahaan</strong></p>
-            <p>PT. BTS.id</p>
-          </div>
-          <div>
-            <p><strong>Pendidikan</strong></p>
-            <p>S1 Teknik Informatika</p>
-          </div>
-          <div>
-            <p><strong>Jenis Kelamin</strong></p>
-            <p>Perempuan</p>
-          </div>
-          <div>
-            <p><strong>Usia</strong></p>
-            <p>23 Tahun</p>
-          </div>
-          <div>
-            <p><strong>Tanggal Assestment</strong></p>
-            <p>17/08/1945</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      "
+    >
+      <!-- Profile -->
+      <table style="margin-bottom: 20px">
+        <tr>
+          <td>Name</td>
+          <td>:</td>
+          <td>John Doe</td>
+        </tr>
 
-    <!-- Laporan -->
-    <div class="card">
-      <div class="card-header">
-        <h3>Laporan</h3>
-      </div>
-      <div class="card-body">
-        <table
-          border="1"
-          bordercolor="#555"
-          cellspacing="0"
-          cellpadding="10"
-          width="100%"
-        >
-          <thead>
-            <tr>
-              <th>Line</th>
-              <th>D</th>
-              <th>I</th>
-              <th>S</th>
-              <th>C</th>
-              <th>*</th>
-              <th>tot</th>
-            </tr>
-          </thead>
+        <tr>
+          <td>Age</td>
+          <td>:</td>
+          <td>19</td>
+        </tr>
 
-          <!-- Value Here -->
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>9</td>
-              <td>3</td>
-              <td>3</td>
-              <td>4</td>
-              <td>44</td>
-              <td>24</td>
-            </tr>
+        <tr>
+          <td>Gender</td>
+          <td>:</td>
+          <td>Laki-Laki</td>
+        </tr>
 
-            <tr>
-              <td>3</td>
-              <td>9</td>
-              <td>3</td>
-              <td>3</td>
-              <td>4</td>
-              <td>44</td>
-              <td>24</td>
-            </tr>
+        <tr>
+          <td>Tanggal Tes</td>
+          <td>:</td>
+          <td>2 Juni 2020</td>
+        </tr>
+      </table>
 
-            <tr>
-              <td>2</td>
-              <td>9</td>
-              <td>3</td>
-              <td>3</td>
-              <td>4</td>
-              <td
-                style="
-                  border-right: 1px solid #fff;
-                  border-bottom: 1px solid #fff;
-                "
-              ></td>
-              <td
-                style="
-                  border-right: 1px solid #fff;
-                  border-bottom: 1px solid #fff;
-                "
-              ></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <!-- DISC Table -->
+      <table
+        class="disc-table"
+        border="1"
+        bordercolor="#555"
+        cellspacing="0"
+        cellpadding="5"
+        width="80%"
+      >
+        <thead>
+          <tr>
+            <th>Line</th>
+            <th>D</th>
+            <th>I</th>
+            <th>S</th>
+            <th>C</th>
+            <th>*</th>
+            <th>tot</th>
+          </tr>
+        </thead>
+
+        <!-- Value Here -->
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>9</td>
+            <td>3</td>
+            <td>3</td>
+            <td>4</td>
+            <td>44</td>
+            <td>24</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>9</td>
+            <td>3</td>
+            <td>3</td>
+            <td>4</td>
+            <td>44</td>
+            <td>24</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>9</td>
+            <td>3</td>
+            <td>3</td>
+            <td>4</td>
+            <td
+              style="
+                border-right: 1px solid #fff;
+                border-bottom: 1px solid #fff;
+              "
+            ></td>
+            <td
+              style="
+                border-right: 1px solid #fff;
+                border-bottom: 1px solid #fff;
+              "
+            ></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <!-- Graphs -->

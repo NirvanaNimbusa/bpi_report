@@ -5,390 +5,405 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Leadership PDF</title>
     <style>
+      body {
+        font-size: 12px;
+        -webkit-print-color-adjust: exact !important;
+      }
+
+      table {
+        border-collapse: collapse;
+        page-break-inside: auto;
+      }
+
+      table tr {
+        border-color: 1px #ddd solid;
+      }
+
+      tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+      }
+
       .table-list {
         margin-top: 20px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 1.5rem;
       }
+
+      /* When Print */
+      @media print {
+        div {
+          page-break-inside: avoid;
+        }
+
+        table {
+          page-break-after: auto;
+        }
+        tr {
+          page-break-inside: avoid;
+          page-break-after: auto;
+        }
+        td {
+          page-break-inside: avoid;
+          page-break-after: auto;
+        }
+        thead {
+          display: table-header-group;
+        }
+        tfoot {
+          display: table-footer-group;
+        }
+      }
     </style>
-    <link rel="stylesheet" href="./globalStyles.css" />
   </head>
   <body>
-    <div class="card">
-      <div class="card-header">
-        <h3>Informasi Asesi</h3>
+    <!-- Heading -->
+    <h1 style="text-align: center">HASIL LEAD STYLE</h1>
+
+    <!-- Profile -->
+    <table cellpadding="3">
+      <tr>
+        <td>Nomor</td>
+        <td>:</td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>Nama</td>
+        <td>:</td>
+        <td></td>
+      </tr>
+    </table>
+
+    <!-- Laporan -->
+    <div class="table-list">
+      <div>
+        <!-- Ignore This Table -->
+        <!-- This is for purpose of aligns -->
+        <table style="visibility: hidden">
+          <thead>
+            <tr>
+              <th colspan="4">
+                <h3>Lajur 1</h3>
+                <h3>(Style Range)</h3>
+                <h4>(Alternative Action)</h4>
+              </th>
+            </tr>
+            <tr>
+              <th>No</th>
+              <th>Jawaban</th>
+            </tr>
+          </thead>
+        </table>
+        <!-- Ignore This Table -->
+
+        <!-- Answers -->
+        <table
+          border="1"
+          bordercolor="#555"
+          cellspacing="0"
+          cellpadding="10"
+          width="100%"
+          id="answer-table"
+        >
+          <!-- Header -->
+          <thead>
+            <tr style="background-color: #bfbfbf">
+              <th>No</th>
+              <th>Jawaban</th>
+            </tr>
+          </thead>
+
+          <!-- Body -->
+          <tbody>
+            <tr>
+              <th>1</th>
+              <th>a</th>
+            </tr>
+            <tr>
+              <th>2</th>
+              <th>b</th>
+            </tr>
+            <tr>
+              <th>3</th>
+              <th>c</th>
+            </tr>
+            <tr>
+              <th>4</th>
+              <th>d</th>
+            </tr>
+            <tr>
+              <th>5</th>
+              <th>a</th>
+            </tr>
+            <tr>
+              <th>6</th>
+              <th>b</th>
+            </tr>
+            <tr>
+              <th>7</th>
+              <th>c</th>
+            </tr>
+            <tr>
+              <th>8</th>
+              <th>d</th>
+            </tr>
+            <tr>
+              <th>9</th>
+              <th>a</th>
+            </tr>
+            <tr>
+              <th>10</th>
+              <th>b</th>
+            </tr>
+            <tr>
+              <th>11</th>
+              <th>c</th>
+            </tr>
+            <tr>
+              <th>12</th>
+              <th>d</th>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <div class="card-body">
-        <div class="grid">
-          <div>
-            <p><strong>Nomor</strong></p>
-            <p>1</p>
-          </div>
-          <div>
-            <p><strong>Nama</strong></p>
-            <td>Cody Fisher</td>
-          </div>
-          <div>
-            <p><strong>Perusahaan</strong></p>
-            <p>PT. BTS.id</p>
-          </div>
-          <div>
-            <p><strong>Pendidikan</strong></p>
-            <p>S1 Teknik Informatika</p>
-          </div>
-          <div>
-            <p><strong>Jenis Kelamin</strong></p>
-            <p>Perempuan</p>
-          </div>
-          <div>
-            <p><strong>Usia</strong></p>
-            <p>23 Tahun</p>
-          </div>
-          <div>
-            <p><strong>Tanggal Assestment</strong></p>
-            <p>17/08/1945</p>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="card">
-      <div class="card-header">
-        <h3>Laporan</h3>
-      </div>
+      <!-- Lane 1 - Style Range -->
+      <table
+        border="1"
+        bordercolor="#555"
+        cellspacing="0"
+        cellpadding="10"
+        width="100%"
+        id="lane-1"
+      >
+        <!-- Header -->
+        <thead>
+          <tr style="background-color: #bfbfbf">
+            <th colspan="4">
+              <h3>Lajur 1</h3>
+              <h3>(Style Range)</h3>
+              <h4>(Alternative Action)</h4>
+            </th>
+          </tr>
+          <tr style="background-color: #bfbfbf">
+            <th>(1)</th>
+            <th>(2)</th>
+            <th>(3)</th>
+            <th>(4)</th>
+          </tr>
+        </thead>
 
-      <div class="card-body">
-        <!-- Content -->
-        <div class="table-list">
-          <div>
-            <!-- Ignore This Table -->
-            <!-- This is for purpose of aligns -->
-            <table style="visibility: hidden">
-              <thead>
-                <tr>
-                  <th colspan="4">
-                    <h3>Lajur 1</h3>
-                    <h3>(Style Range)</h3>
-                    <h4>(Alternative Action)</h4>
-                  </th>
-                </tr>
-                <tr>
-                  <th>No</th>
-                  <th>Jawaban</th>
-                </tr>
-              </thead>
-            </table>
-            <!-- Ignore This Table -->
+        <!-- Body -->
+        <tbody>
+          <tr>
+            <th>1</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+          <tr>
+            <th>1</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+          <tr>
+            <th>1</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+          <tr>
+            <th>1</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+          <tr>
+            <th>1</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+          <tr>
+            <th>1</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+          <tr>
+            <th>1</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+          <tr>
+            <th>1</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+          <tr>
+            <th>1</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+          <tr>
+            <th>1</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+          <tr>
+            <th>1</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+          <tr>
+            <th>1</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+        </tbody>
 
-            <!-- Answers -->
-            <table
-              border="1"
-              bordercolor="#555"
-              cellspacing="0"
-              cellpadding="10"
-              width="100%"
-              id="answer-table"
-            >
-              <!-- Header -->
-              <thead>
-                <tr>
-                  <th>No</th>
-                  <th>Jawaban</th>
-                </tr>
-              </thead>
+        <!-- Footer -->
+        <tfoot style="background-color: #bfbfbf">
+          <tr>
+            <th>(1)</th>
+            <th>(2)</th>
+            <th>(3)</th>
+            <th>(4)</th>
+          </tr>
+          <tr>
+            <th>12</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+        </tfoot>
+      </table>
 
-              <!-- Body -->
-              <tbody>
-                <tr>
-                  <th>1</th>
-                  <th>a</th>
-                </tr>
-                <tr>
-                  <th>2</th>
-                  <th>b</th>
-                </tr>
-                <tr>
-                  <th>3</th>
-                  <th>c</th>
-                </tr>
-                <tr>
-                  <th>4</th>
-                  <th>d</th>
-                </tr>
-                <tr>
-                  <th>5</th>
-                  <th>a</th>
-                </tr>
-                <tr>
-                  <th>6</th>
-                  <th>b</th>
-                </tr>
-                <tr>
-                  <th>7</th>
-                  <th>c</th>
-                </tr>
-                <tr>
-                  <th>8</th>
-                  <th>d</th>
-                </tr>
-                <tr>
-                  <th>9</th>
-                  <th>a</th>
-                </tr>
-                <tr>
-                  <th>10</th>
-                  <th>b</th>
-                </tr>
-                <tr>
-                  <th>11</th>
-                  <th>c</th>
-                </tr>
-                <tr>
-                  <th>12</th>
-                  <th>d</th>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+      <!-- Lane 2 - Style Range -->
+      <table
+        border="1"
+        bordercolor="#555"
+        cellspacing="0"
+        cellpadding="10"
+        width="100%"
+      >
+        <!-- Header -->
+        <thead>
+          <tr style="background-color: #bfbfbf">
+            <th colspan="4">
+              <h3>Lajur 2</h3>
+              <h3>(Style Adaptability)</h3>
+              <h4>(Alternative Action)</h4>
+            </th>
+          </tr>
+          <tr style="background-color: #bfbfbf">
+            <th>(1)</th>
+            <th>(2)</th>
+            <th>(3)</th>
+            <th>(4)</th>
+          </tr>
+        </thead>
 
-          <!-- Lane 1 - Style Range -->
-          <table
-            border="1"
-            bordercolor="#555"
-            cellspacing="0"
-            cellpadding="10"
-            width="100%"
-            id="lane-1"
-          >
-            <!-- Header -->
-            <thead>
-              <tr>
-                <th colspan="4">
-                  <h3>Lajur 1</h3>
-                  <h3>(Style Range)</h3>
-                  <h4>(Alternative Action)</h4>
-                </th>
-              </tr>
-              <tr>
-                <th>(1)</th>
-                <th>(2)</th>
-                <th>(3)</th>
-                <th>(4)</th>
-              </tr>
-            </thead>
+        <!-- Body -->
+        <tbody>
+          <tr>
+            <th>-2</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+          <tr>
+            <th>-2</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+          <tr>
+            <th>-2</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+          <tr>
+            <th>-2</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+          <tr>
+            <th>-2</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+          <tr>
+            <th>-2</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+          <tr>
+            <th>-2</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+          <tr>
+            <th>-2</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+          <tr>
+            <th>-2</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+          <tr>
+            <th>-2</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+          <tr>
+            <th>-2</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+          <tr>
+            <th>-2</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+          </tr>
+        </tbody>
 
-            <!-- Body -->
-            <tbody>
-              <tr>
-                <th>1</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-              <tr>
-                <th>1</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-              <tr>
-                <th>1</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-              <tr>
-                <th>1</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-              <tr>
-                <th>1</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-              <tr>
-                <th>1</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-              <tr>
-                <th>1</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-              <tr>
-                <th>1</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-              <tr>
-                <th>1</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-              <tr>
-                <th>1</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-              <tr>
-                <th>1</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-              <tr>
-                <th>1</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-            </tbody>
-
-            <!-- Footer -->
-            <tfoot>
-              <tr>
-                <th>(1)</th>
-                <th>(2)</th>
-                <th>(3)</th>
-                <th>(4)</th>
-              </tr>
-              <tr>
-                <th>12</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-            </tfoot>
-          </table>
-
-          <!-- Lane 2 - Style Range -->
-          <table
-            border="1"
-            bordercolor="#555"
-            cellspacing="0"
-            cellpadding="10"
-            width="100%"
-          >
-            <!-- Header -->
-            <thead>
-              <tr>
-                <th colspan="4">
-                  <h3>Lajur 2</h3>
-                  <h3>(Style Adaptability)</h3>
-                  <h4>(Alternative Action)</h4>
-                </th>
-              </tr>
-              <tr>
-                <th>(1)</th>
-                <th>(2)</th>
-                <th>(3)</th>
-                <th>(4)</th>
-              </tr>
-            </thead>
-
-            <!-- Body -->
-            <tbody>
-              <tr>
-                <th>-2</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-              <tr>
-                <th>-2</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-              <tr>
-                <th>-2</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-              <tr>
-                <th>-2</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-              <tr>
-                <th>-2</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-              <tr>
-                <th>-2</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-              <tr>
-                <th>-2</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-              <tr>
-                <th>-2</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-              <tr>
-                <th>-2</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-              <tr>
-                <th>-2</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-              <tr>
-                <th>-2</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-              <tr>
-                <th>-2</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-              </tr>
-            </tbody>
-
-            <!-- Footer -->
-            <tfoot>
-              <tr>
-                <td colspan="4"></td>
-                <th rowspan="1">Total</th>
-              </tr>
-              <tr>
-                <th>-24</th>
-                <th>0</th>
-                <th>0</th>
-                <th>0</th>
-                <th>-24</th>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
-      </div>
+        <!-- Footer -->
+        <tfoot style="background-color: #bfbfbf">
+          <tr>
+            <td colspan="4"></td>
+            <th rowspan="1">Total</th>
+          </tr>
+          <tr>
+            <th>-24</th>
+            <th>0</th>
+            <th>0</th>
+            <th>0</th>
+            <th>-24</th>
+          </tr>
+        </tfoot>
+      </table>
     </div>
   </body>
 </html>

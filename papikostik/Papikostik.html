@@ -4,178 +4,232 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Papikostik PDF</title>
-    <link rel="stylesheet" href="../globalStyles.css" />
+    <style>
+      body {
+        font-size: 12px;
+      }
+
+      table {
+        border-collapse: collapse;
+        page-break-inside: auto;
+      }
+
+      table tr {
+        border-color: 1px #ddd solid;
+      }
+
+      tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+      }
+
+      thead {
+        display: table-header-group;
+      }
+
+      tfoot {
+        display: table-footer-group;
+      }
+
+      div {
+        page-break-inside: avoid;
+      }
+
+      table tr td:first-child {
+        font-weight: bold;
+      }
+
+      /* When Print */
+      @media print {
+        div {
+          page-break-inside: avoid;
+        }
+
+        table {
+          page-break-after: auto;
+        }
+        tr {
+          page-break-inside: avoid;
+          page-break-after: auto;
+        }
+        td {
+          page-break-inside: avoid;
+          page-break-after: auto;
+        }
+        thead {
+          display: table-header-group;
+        }
+        tfoot {
+          display: table-footer-group;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div class="card">
-      <div class="card-header">
-        <h3>Informasi Asesi</h3>
-      </div>
-      <div class="card-body">
-        <div class="grid">
-          <div>
-            <p><strong>Nomor</strong></p>
-            <p>1</p>
-          </div>
-          <div>
-            <p><strong>Nama</strong></p>
-            <td>Cody Fisher</td>
-          </div>
-          <div>
-            <p><strong>Perusahaan</strong></p>
-            <p>PT. BTS.id</p>
-          </div>
-          <div>
-            <p><strong>Pendidikan</strong></p>
-            <p>S1 Teknik Informatika</p>
-          </div>
-          <div>
-            <p><strong>Jenis Kelamin</strong></p>
-            <p>Perempuan</p>
-          </div>
-          <div>
-            <p><strong>Usia</strong></p>
-            <p>23 Tahun</p>
-          </div>
-          <div>
-            <p><strong>Tanggal Assestment</strong></p>
-            <p>17/08/1945</p>
-          </div>
-        </div>
-      </div>
+    <!-- Profile -->
+    <div
+      style="
+        display: grid;
+        grid-template-columns: 30% 30%;
+        justify-content: center;
+        grid-gap: 20px;
+      "
+    >
+      <table cellpadding="5">
+        <tr>
+          <td>NO</td>
+          <td>:</td>
+          <td>1</td>
+        </tr>
+
+        <tr>
+          <td>NAMA</td>
+          <td>:</td>
+          <td>John Doe</td>
+        </tr>
+
+        <tr>
+          <td>Tanggal Pemeriksaan</td>
+          <td>:</td>
+          <td>09/01/2020</td>
+        </tr>
+      </table>
+
+      <table cellpadding="5">
+        <tr>
+          <td>Pendidikan</td>
+          <td>:</td>
+          <td>S1</td>
+        </tr>
+
+        <tr>
+          <td>Tanggal Lahir</td>
+          <td>:</td>
+          <td>09/20/2020</td>
+        </tr>
+
+        <tr>
+          <td>Jenis Kelamin</td>
+          <td>:</td>
+          <td>Laki-Laki</td>
+        </tr>
+      </table>
     </div>
 
-    <div class="card">
-      <div class="card-header">
-        <h3>Laporan</h3>
-      </div>
-      <div class="card-body">
+    <div
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      "
+    >
+      <canvas id="papikostik" width="720" height="720"></canvas>
+
+      <div style="padding: 10px; margin-top: 40px">
+        <!-- Up -->
         <div
           style="
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            grid-gap: 20px;
           "
         >
-          <canvas id="papikostik" width="720" height="720"></canvas>
+          <div>
+            <p><strong>G</strong></p>
+            <p>5</p>
+          </div>
+          <div>
+            <p><strong>L</strong></p>
+            <p>6</p>
+          </div>
+          <div>
+            <p><strong>I</strong></p>
+            <p>2</p>
+          </div>
+          <div>
+            <p><strong>T</strong></p>
+            <p>2</p>
+          </div>
+          <div>
+            <p><strong>V</strong></p>
+            <p>2</p>
+          </div>
+          <div>
+            <p><strong>S</strong></p>
+            <p>4</p>
+          </div>
+          <div>
+            <p><strong>R</strong></p>
+            <p>7</p>
+          </div>
+          <div>
+            <p><strong>D</strong></p>
+            <p>6</p>
+          </div>
+          <div>
+            <p><strong>C</strong></p>
+            <p>8</p>
+          </div>
+          <div>
+            <p><strong>E</strong></p>
+            <p>4</p>
+          </div>
+        </div>
 
-          <div
-            style="
-              padding: 10px;
-              margin-top: 40px;
-              border: 0px #000 solid !important;
-              box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2),
-                1px 1px 2px rgba(0, 0, 0, 0.2);
-              border-radius: 5px;
-            "
-          >
-            <!-- Up -->
-            <div
-              style="
-                display: grid;
-                grid-template-columns: repeat(10, 1fr);
-                grid-gap: 20px;
-              "
-            >
-              <div>
-                <p><strong>G</strong></p>
-                <p>5</p>
-              </div>
-              <div>
-                <p><strong>L</strong></p>
-                <p>6</p>
-              </div>
-              <div>
-                <p><strong>I</strong></p>
-                <p>2</p>
-              </div>
-              <div>
-                <p><strong>T</strong></p>
-                <p>2</p>
-              </div>
-              <div>
-                <p><strong>V</strong></p>
-                <p>2</p>
-              </div>
-              <div>
-                <p><strong>S</strong></p>
-                <p>4</p>
-              </div>
-              <div>
-                <p><strong>R</strong></p>
-                <p>7</p>
-              </div>
-              <div>
-                <p><strong>D</strong></p>
-                <p>6</p>
-              </div>
-              <div>
-                <p><strong>C</strong></p>
-                <p>8</p>
-              </div>
-              <div>
-                <p><strong>E</strong></p>
-                <p>4</p>
-              </div>
-            </div>
+        <hr />
 
-            <hr />
-
-            <!-- Down -->
-            <div
-              style="
-                display: grid;
-                grid-template-columns: repeat(10, 1fr);
-                grid-gap: 20px;
-              "
-            >
-              <div>
-                <p><strong>N</strong></p>
-                <p>5</p>
-              </div>
-              <div>
-                <p><strong>A</strong></p>
-                <p>6</p>
-              </div>
-              <div>
-                <p><strong>P</strong></p>
-                <p>2</p>
-              </div>
-              <div>
-                <p><strong>X</strong></p>
-                <p>2</p>
-              </div>
-              <div>
-                <p><strong>B</strong></p>
-                <p>2</p>
-              </div>
-              <div>
-                <p><strong>O</strong></p>
-                <p>4</p>
-              </div>
-              <div>
-                <p><strong>Z</strong></p>
-                <p>7</p>
-              </div>
-              <div>
-                <p><strong>K</strong></p>
-                <p>6</p>
-              </div>
-              <div>
-                <p><strong>F</strong></p>
-                <p>8</p>
-              </div>
-              <div>
-                <p><strong>W</strong></p>
-                <p>4</p>
-              </div>
-            </div>
+        <!-- Down -->
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            grid-gap: 20px;
+          "
+        >
+          <div>
+            <p><strong>N</strong></p>
+            <p>5</p>
+          </div>
+          <div>
+            <p><strong>A</strong></p>
+            <p>6</p>
+          </div>
+          <div>
+            <p><strong>P</strong></p>
+            <p>2</p>
+          </div>
+          <div>
+            <p><strong>X</strong></p>
+            <p>2</p>
+          </div>
+          <div>
+            <p><strong>B</strong></p>
+            <p>2</p>
+          </div>
+          <div>
+            <p><strong>O</strong></p>
+            <p>4</p>
+          </div>
+          <div>
+            <p><strong>Z</strong></p>
+            <p>7</p>
+          </div>
+          <div>
+            <p><strong>K</strong></p>
+            <p>6</p>
+          </div>
+          <div>
+            <p><strong>F</strong></p>
+            <p>8</p>
+          </div>
+          <div>
+            <p><strong>W</strong></p>
+            <p>4</p>
           </div>
         </div>
       </div>
     </div>
-
     <!-- Package for loading the line in papikostik  -->
     <script src="./fabric.min.js"></script>
     <!-- Real fake data from the API -->

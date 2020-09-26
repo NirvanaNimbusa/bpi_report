@@ -4,8 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>STEN PDF</title>
-    <link rel="stylesheet" href="./globalStyles.css" />
     <style>
+      body {
+        font-size: 12px;
+        -webkit-print-color-adjust: exact !important;
+      }
+
+      table {
+        border-collapse: collapse;
+        page-break-inside: auto;
+      }
+
+      table tr {
+        border-color: 1px #ddd solid;
+      }
+
+      tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+      }
+
+      thead {
+        display: table-header-group;
+      }
+
+      tfoot {
+        display: table-footer-group;
+      }
+
+      div {
+        page-break-inside: avoid;
+      }
+
+      .profile tr td:first-child {
+        font-weight: bold;
+      }
+
       .mydiv {
         border: 1px solid #fea516;
         background-color: #fea516;
@@ -73,392 +107,395 @@
     </style>
   </head>
   <body onresize="onResizeFunc()">
-    <div class="card">
-      <div class="card-header">
-        <h3>Informasi Asesi</h3>
-      </div>
-      <div class="card-body">
-        <div class="grid">
-          <div>
-            <p><strong>Nomor</strong></p>
-            <p>1</p>
-          </div>
-          <div>
-            <p><strong>Nama</strong></p>
-            <td>Cody Fisher</td>
-          </div>
-          <div>
-            <p><strong>Perusahaan</strong></p>
-            <p>PT. BTS.id</p>
-          </div>
-          <div>
-            <p><strong>Pendidikan</strong></p>
-            <p>S1 Teknik Informatika</p>
-          </div>
-          <div>
-            <p><strong>Jenis Kelamin</strong></p>
-            <p>Perempuan</p>
-          </div>
-          <div>
-            <p><strong>Usia</strong></p>
-            <p>23 Tahun</p>
-          </div>
-          <div>
-            <p><strong>Tanggal Assestment</strong></p>
-            <p>17/08/1945</p>
-          </div>
-        </div>
-      </div>
+    <!-- Profile -->
+    <div
+      style="
+        display: grid;
+        grid-template-columns: 30% 30%;
+        justify-content: center;
+        align-items: center;
+      "
+      class="profile"
+    >
+      <table cellpadding="5">
+        <tr>
+          <td>Nomor</td>
+          <td></td>
+          <td>1</td>
+        </tr>
+
+        <tr>
+          <td>Nama</td>
+          <td></td>
+          <td>John Doe</td>
+        </tr>
+
+        <tr>
+          <td>Perusahaan</td>
+          <td></td>
+          <td>PT. BTS.id</td>
+        </tr>
+      </table>
+
+      <table cellpadding="5">
+        <tr>
+          <td>Pendidikan</td>
+          <td></td>
+          <td>S1 Teknik Informatika</td>
+        </tr>
+
+        <tr>
+          <td>Jenis Kelamin</td>
+          <td></td>
+          <td>Laki-Laki</td>
+        </tr>
+
+        <tr>
+          <td>Usia</td>
+          <td></td>
+          <td>23 Tahun</td>
+        </tr>
+      </table>
     </div>
 
-    <div class="card">
-      <div class="card-header" style="margin-bottom: 20px">
-        <h3>First Order Factor</h3>
-      </div>
-      <div class="card-body">
-        <table
-          border="1"
-          bordercolor="#ccc"
-          cellspacing="0"
-          cellpadding="5"
-          style="width: 100%"
-        >
-          <thead>
-            <tr>
-              <th rowspan="2">LOW SCORE DESCRIPTION</th>
-              <th rowspan="2">FACTOR</th>
-              <th colspan="4">LOW</th>
-              <th colspan="3">AVERAGE</th>
-              <th colspan="3">HIGH</th>
-              <th rowspan="2">FACTOR</th>
-              <th rowspan="2">HIGH SCORE DESCRIPTION</th>
-            </tr>
+    <!-- First Order Factor -->
+    <h3>First Order Factor</h3>
+    <table
+      border="1"
+      bordercolor="#ccc"
+      cellspacing="0"
+      cellpadding="5"
+      style="width: 100%"
+    >
+      <thead>
+        <tr>
+          <th rowspan="2">LOW SCORE DESCRIPTION</th>
+          <th rowspan="2">FACTOR</th>
+          <th colspan="4">LOW</th>
+          <th colspan="3">AVERAGE</th>
+          <th colspan="3">HIGH</th>
+          <th rowspan="2">FACTOR</th>
+          <th rowspan="2">HIGH SCORE DESCRIPTION</th>
+        </tr>
 
-            <tr>
-              <th>1</th>
-              <th>2</th>
-              <th>3</th>
-              <th>4</th>
-              <th>5</th>
-              <th>6</th>
-              <th>7</th>
-              <th>8</th>
-              <th>9</th>
-              <th>10</th>
-            </tr>
-          </thead>
+        <tr>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+        </tr>
+      </thead>
 
-          <tbody class="body-no-border">
-            <tr>
-              <td>Reserved, impersonal, distant to others (Berjarak)</td>
-              <td>A</td>
-              <td>
-                <div id="div-a" class="mydiv dot"></div>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>A</td>
-              <td>Emotionally stable, adaptive, mature (Hangat)</td>
-            </tr>
-            <tr>
-              <td>Deferential, cooperative, avoids conflict (Konkret)</td>
-              <td>B</td>
-              <td></td>
-              <td>
-                <div id="div-b" class="mydiv dot"></div>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>B</td>
-              <td>Abstract, bright, fast-learner (Abstrak)</td>
-            </tr>
-            <tr>
-              <td>Reactive, affected by feelings (Emosi berubah-ubah)</td>
-              <td>C</td>
-              <td></td>
-              <td></td>
-              <td>
-                <div id="div-c" class="mydiv dot"></div>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>C</td>
-              <td>Emotionally stable, adaptive, mature (Emosi terkendali)</td>
-            </tr>
-            <tr>
-              <td>
-                Deferential, cooperative, avoids conflict (Patuh, penurut)
-              </td>
-              <td>E</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><div id="div-e" class="mydiv dot"></div></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>E</td>
-              <td>
-                Dominant, forceful, assertive (Dominan mengatur orang lain)
-              </td>
-            </tr>
-            <tr>
-              <td>Serious, restrained, careful (Terhambat)</td>
-              <td>F</td>
-              <td></td>
-              <td></td>
-              <td><div id="div-f" class="mydiv dot"></div></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>F</td>
-              <td>Enthusiastic, animated, spontaneous (Spontan)</td>
-            </tr>
-            <tr>
-              <td>Rule-expedient, nonconforming (Tidak menyadari aturan)</td>
-              <td>G</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><div id="div-g" class="mydiv dot"></div></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>G</td>
-              <td>Rule conscious, dutiful (Sadar akan aturan)</td>
-            </tr>
-            <tr>
-              <td>Shy, timid, threat sensitive (Pemalu, menunggu disapa)</td>
-              <td>H</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <div id="div-h" class="mydiv dot"></div>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>H</td>
-              <td>
-                Socially bold, venturesome, Thick-skinned (Berani, berinisiatif
-                dalam bergaul)
-              </td>
-            </tr>
-            <tr>
-              <td>Tough, objective, unsentimental (Tidak peka)</td>
-              <td>I</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <div id="div-i" class="mydiv dot"></div>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>I</td>
-              <td>Sensitive, aesthetic, tender–minded (Peka)</td>
-            </tr>
-            <tr>
-              <td>Trusting, unsuspecting, accepting (Mudah percaya, lugu)</td>
-              <td>L</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <div id="div-l" class="mydiv dot"></div>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>L</td>
-              <td>Vigilant, suspicious, skeptical, wary (Hati-hati, curiga)</td>
-            </tr>
-            <tr>
-              <td>
-                Practical, grounded, down-to-earth (Menekankan pada tingkatan)
-              </td>
-              <td>M</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <div id="div-m" class="mydiv dot"></div>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>M</td>
-              <td>
-                Abstracted, imaginative, idea oriented (Menekankan pada
-                pemikiran)
-              </td>
-            </tr>
-            <tr>
-              <td>Forthright, genuine, artless (Terbuka, apa adanya)</td>
-              <td>N</td>
-              <td>
-                <div id="div-n" class="mydiv dot"></div>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>N</td>
-              <td>Private, discreet, nondisclosing (Tertutup)</td>
-            </tr>
-            <tr>
-              <td>Self-assured, unworried, complacent (Tenang)</td>
-              <td>O</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <div id="div-o" class="mydiv dot"></div>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>O</td>
-              <td>Apprehensive, self- doubting, worried (Selektif)</td>
-            </tr>
-            <tr>
-              <td>
-                Traditional, attached to familiar (Bertahan yang sudah biasa,
-                Tradisional)
-              </td>
-              <td>Q1</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <div id="div-q1" class="mydiv dot"></div>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>Q1</td>
-              <td>Open to change,experimenting (Cemas)</td>
-            </tr>
-            <tr>
-              <td>Group-oriented, affiliative (Tergantung, kolektivis)</td>
-              <td>Q2</td>
-              <td></td>
-              <td></td>
-              <td>
-                <div id="div-q2" class="mydiv dot"></div>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>Q2</td>
-              <td>
-                Self-reliant, solitary, individualistic (Terbuka pada perubahan,
-                mau mencoba)
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Tolerates disorder, unexacting, flexible (Tidak teratur, tidak
-                tertib)
-              </td>
-              <td>Q3</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <div id="div-q3" class="mydiv dot"></div>
-              </td>
-              <td>Q3</td>
-              <td>
-                Perfectionistic, organized, self-disciplined (Mandiri,
-                individualis)
-              </td>
-            </tr>
-            <tr>
-              <td>Relaxed, placid, patient (Santai)</td>
-              <td>Q4</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <div id="div-q4" class="mydiv dot"></div>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>Q4</td>
-              <td>Tense, high energy, driven (Teratur, tertib tegang)</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+      <tbody class="body-no-border">
+        <tr>
+          <td>Reserved, impersonal, distant to others (Berjarak)</td>
+          <td>A</td>
+          <td>
+            <div id="div-a" class="mydiv dot"></div>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>A</td>
+          <td>Emotionally stable, adaptive, mature (Hangat)</td>
+        </tr>
+        <tr>
+          <td>Deferential, cooperative, avoids conflict (Konkret)</td>
+          <td>B</td>
+          <td></td>
+          <td>
+            <div id="div-b" class="mydiv dot"></div>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>B</td>
+          <td>Abstract, bright, fast-learner (Abstrak)</td>
+        </tr>
+        <tr>
+          <td>Reactive, affected by feelings (Emosi berubah-ubah)</td>
+          <td>C</td>
+          <td></td>
+          <td></td>
+          <td>
+            <div id="div-c" class="mydiv dot"></div>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>C</td>
+          <td>Emotionally stable, adaptive, mature (Emosi terkendali)</td>
+        </tr>
+        <tr>
+          <td>Deferential, cooperative, avoids conflict (Patuh, penurut)</td>
+          <td>E</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><div id="div-e" class="mydiv dot"></div></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>E</td>
+          <td>Dominant, forceful, assertive (Dominan mengatur orang lain)</td>
+        </tr>
+        <tr>
+          <td>Serious, restrained, careful (Terhambat)</td>
+          <td>F</td>
+          <td></td>
+          <td></td>
+          <td><div id="div-f" class="mydiv dot"></div></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>F</td>
+          <td>Enthusiastic, animated, spontaneous (Spontan)</td>
+        </tr>
+        <tr>
+          <td>Rule-expedient, nonconforming (Tidak menyadari aturan)</td>
+          <td>G</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><div id="div-g" class="mydiv dot"></div></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>G</td>
+          <td>Rule conscious, dutiful (Sadar akan aturan)</td>
+        </tr>
+        <tr>
+          <td>Shy, timid, threat sensitive (Pemalu, menunggu disapa)</td>
+          <td>H</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <div id="div-h" class="mydiv dot"></div>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>H</td>
+          <td>
+            Socially bold, venturesome, Thick-skinned (Berani, berinisiatif
+            dalam bergaul)
+          </td>
+        </tr>
+        <tr>
+          <td>Tough, objective, unsentimental (Tidak peka)</td>
+          <td>I</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <div id="div-i" class="mydiv dot"></div>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>I</td>
+          <td>Sensitive, aesthetic, tender–minded (Peka)</td>
+        </tr>
+        <tr>
+          <td>Trusting, unsuspecting, accepting (Mudah percaya, lugu)</td>
+          <td>L</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <div id="div-l" class="mydiv dot"></div>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>L</td>
+          <td>Vigilant, suspicious, skeptical, wary (Hati-hati, curiga)</td>
+        </tr>
+        <tr>
+          <td>
+            Practical, grounded, down-to-earth (Menekankan pada tingkatan)
+          </td>
+          <td>M</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <div id="div-m" class="mydiv dot"></div>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>M</td>
+          <td>
+            Abstracted, imaginative, idea oriented (Menekankan pada pemikiran)
+          </td>
+        </tr>
+        <tr>
+          <td>Forthright, genuine, artless (Terbuka, apa adanya)</td>
+          <td>N</td>
+          <td>
+            <div id="div-n" class="mydiv dot"></div>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>N</td>
+          <td>Private, discreet, nondisclosing (Tertutup)</td>
+        </tr>
+        <tr>
+          <td>Self-assured, unworried, complacent (Tenang)</td>
+          <td>O</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <div id="div-o" class="mydiv dot"></div>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>O</td>
+          <td>Apprehensive, self- doubting, worried (Selektif)</td>
+        </tr>
+        <tr>
+          <td>
+            Traditional, attached to familiar (Bertahan yang sudah biasa,
+            Tradisional)
+          </td>
+          <td>Q1</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <div id="div-q1" class="mydiv dot"></div>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Q1</td>
+          <td>Open to change,experimenting (Cemas)</td>
+        </tr>
+        <tr>
+          <td>Group-oriented, affiliative (Tergantung, kolektivis)</td>
+          <td>Q2</td>
+          <td></td>
+          <td></td>
+          <td>
+            <div id="div-q2" class="mydiv dot"></div>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Q2</td>
+          <td>
+            Self-reliant, solitary, individualistic (Terbuka pada perubahan, mau
+            mencoba)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Tolerates disorder, unexacting, flexible (Tidak teratur, tidak
+            tertib)
+          </td>
+          <td>Q3</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <div id="div-q3" class="mydiv dot"></div>
+          </td>
+          <td>Q3</td>
+          <td>
+            Perfectionistic, organized, self-disciplined (Mandiri, individualis)
+          </td>
+        </tr>
+        <tr>
+          <td>Relaxed, placid, patient (Santai)</td>
+          <td>Q4</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <div id="div-q4" class="mydiv dot"></div>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Q4</td>
+          <td>Tense, high energy, driven (Teratur, tertib tegang)</td>
+        </tr>
+      </tbody>
+    </table>
+
     <div id="line-a-b" class="line"></div>
     <div id="line-b-c" class="line"></div>
     <div id="line-c-e" class="line"></div>
@@ -476,51 +513,45 @@
     <div id="line-q3-q4" class="line"></div>
 
     <!-- SECOND ORDER FACTOR ESALRI -->
-    <div class="card">
-      <div class="card-header">
-        <h3>SECOND ORDER FACTOR ESALRI</h3>
-      </div>
-      <div class="card-body">
-        <table
-          border="1"
-          bordercolor="#ccc"
-          cellspacing="0"
-          cellpadding="10"
-          style="width: 100%"
-        >
-          <tr>
-            <th>E</th>
-            <th>16</th>
-            <th>-/+</th>
-          </tr>
-          <tr>
-            <th>S</th>
-            <th>22</th>
-            <th>-/+</th>
-          </tr>
-          <tr>
-            <th>A</th>
-            <th>28</th>
-            <th>+</th>
-          </tr>
-          <tr>
-            <th>L</th>
-            <th>28</th>
-            <th>+</th>
-          </tr>
-          <tr>
-            <th>R</th>
-            <th>24</th>
-            <th>-/+</th>
-          </tr>
-          <tr>
-            <th>I</th>
-            <th>25</th>
-            <th>-/+</th>
-          </tr>
-        </table>
-      </div>
-    </div>
+    <h3>SECOND ORDER FACTOR ESALRI</h3>
+    <table
+      border="1"
+      bordercolor="#ccc"
+      cellspacing="0"
+      cellpadding="10"
+      style="width: 100%"
+    >
+      <tr>
+        <th>E</th>
+        <th>16</th>
+        <th>-/+</th>
+      </tr>
+      <tr>
+        <th>S</th>
+        <th>22</th>
+        <th>-/+</th>
+      </tr>
+      <tr>
+        <th>A</th>
+        <th>28</th>
+        <th>+</th>
+      </tr>
+      <tr>
+        <th>L</th>
+        <th>28</th>
+        <th>+</th>
+      </tr>
+      <tr>
+        <th>R</th>
+        <th>24</th>
+        <th>-/+</th>
+      </tr>
+      <tr>
+        <th>I</th>
+        <th>25</th>
+        <th>-/+</th>
+      </tr>
+    </table>
 
     <!-- ORDER BIG 5 -->
     <h3>ORDER BIG 5</h3>
